@@ -19,6 +19,9 @@
 		037DE51F2ABC001300EBB7DB /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DE51D2ABC001300EBB7DB /* Symbol.swift */; };
 		037DE5222ABC002C00EBB7DB /* SymbolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037DE5202ABC002C00EBB7DB /* SymbolCell.xib */; };
 		037DE5232ABC002C00EBB7DB /* SymbolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DE5212ABC002C00EBB7DB /* SymbolCell.swift */; };
+		1A4F4DAF2D44988E006CB409 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F4DAE2D44988E006CB409 /* MainTabBarVC.swift */; };
+		1A4F4DB12D449B3A006CB409 /* BrowseSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F4DB02D449B3A006CB409 /* BrowseSymbolsView.swift */; };
+		1A4F4DB32D44A11F006CB409 /* SymbolDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F4DB22D44A11F006CB409 /* SymbolDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		037DE51D2ABC001300EBB7DB /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		037DE5202ABC002C00EBB7DB /* SymbolCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymbolCell.xib; sourceTree = "<group>"; };
 		037DE5212ABC002C00EBB7DB /* SymbolCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolCell.swift; sourceTree = "<group>"; };
+		1A4F4DAE2D44988E006CB409 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
+		1A4F4DB02D449B3A006CB409 /* BrowseSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSymbolsView.swift; sourceTree = "<group>"; };
+		1A4F4DB22D44A11F006CB409 /* SymbolDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,8 @@
 			children = (
 				037DE5212ABC002C00EBB7DB /* SymbolCell.swift */,
 				037DE5202ABC002C00EBB7DB /* SymbolCell.xib */,
+				1A4F4DB02D449B3A006CB409 /* BrowseSymbolsView.swift */,
+				1A4F4DB22D44A11F006CB409 /* SymbolDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -111,6 +119,7 @@
 				037DE5162ABBFFDE00EBB7DB /* BrowseSymbolsVC.swift */,
 				037DE5172ABBFFDE00EBB7DB /* SettingVC.swift */,
 				037DE5182ABBFFDE00EBB7DB /* SymbolDetailVC.swift */,
+				1A4F4DAE2D44988E006CB409 /* MainTabBarVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -199,12 +208,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				037DE5192ABBFFDE00EBB7DB /* BrowseSymbolsVC.swift in Sources */,
+				1A4F4DB32D44A11F006CB409 /* SymbolDetailView.swift in Sources */,
 				037DE5232ABC002C00EBB7DB /* SymbolCell.swift in Sources */,
 				037DE51B2ABBFFDE00EBB7DB /* SymbolDetailVC.swift in Sources */,
 				037DE51A2ABBFFDE00EBB7DB /* SettingVC.swift in Sources */,
+				1A4F4DAF2D44988E006CB409 /* MainTabBarVC.swift in Sources */,
 				037DE5152ABBFF7600EBB7DB /* AppDelegate.swift in Sources */,
 				037DE51F2ABC001300EBB7DB /* Symbol.swift in Sources */,
 				037DE51E2ABC001300EBB7DB /* SortOrder.swift in Sources */,
+				1A4F4DB12D449B3A006CB409 /* BrowseSymbolsView.swift in Sources */,
 				037DE5142ABBFF7600EBB7DB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +375,6 @@
 				INFOPLIST_FILE = CoolSymbols/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -393,7 +404,6 @@
 				INFOPLIST_FILE = CoolSymbols/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
