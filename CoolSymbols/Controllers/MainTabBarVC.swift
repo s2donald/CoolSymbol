@@ -14,14 +14,14 @@ class MainTabBarVC: UITabBarController {
         let browseSymbolsNC = UINavigationController()
         browseSymbolsNC.pushViewController(browseSymbolsVC, animated: false)
         
-        let settingVC = UIViewController()
+        let settingVC = SettingVC()
         settingVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear.circle.fill"), selectedImage: nil)
         
         let AccountVC = UIViewController()
-        AccountVC.tabBarItem = UITabBarItem(title: "Account", image: UIImage(systemName: "gear.circle.fill"), selectedImage: nil)
+        AccountVC.tabBarItem = UITabBarItem(title: "Account", image: UIImage(systemName: "person.crop.circle.fill"), selectedImage: nil)
         
         let ShoppingVC = UIViewController()
-        ShoppingVC.tabBarItem = UITabBarItem(title: "Shopping", image: UIImage(systemName: "gear.circle.fill"), selectedImage: nil)
+        ShoppingVC.tabBarItem = UITabBarItem(title: "Shopping", image: UIImage(systemName: "bag.circle.fill"), selectedImage: nil)
         
         viewControllers = [AccountVC, browseSymbolsNC, ShoppingVC, settingVC]
     }

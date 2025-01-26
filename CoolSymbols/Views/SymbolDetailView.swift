@@ -8,69 +8,58 @@
 import UIKit
 
 class SymbolDetailView: UIView {
+    @UsesAutoLayout
   private var nameLabel: UILabel = {
     let nameLabel = UILabel()
     nameLabel.adjustsFontSizeToFitWidth = true
     nameLabel.font = UIFont.boldSystemFont(ofSize: 30.0)
     nameLabel.textAlignment = .center
-    nameLabel.translatesAutoresizingMaskIntoConstraints = false
     return nameLabel
   }()
 
-  private var representationImageView: UIImageView = {
-    let representationImageView = UIImageView()
-    representationImageView.translatesAutoresizingMaskIntoConstraints = false
-    return representationImageView
-  }()
+    @UsesAutoLayout
+    private var representationImageView = UIImageView()
 
+    @UsesAutoLayout
   private var categoryLabel: UILabel = {
     let categoryLabel = UILabel()
     categoryLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
     categoryLabel.textAlignment = .center
     categoryLabel.textColor = .secondaryLabel
-    categoryLabel.translatesAutoresizingMaskIntoConstraints = false
     return categoryLabel
   }()
 
-  private var iosExpertLabel: UILabel = {
-    let iosExpertLabel = UILabel()
-    iosExpertLabel.text = "iOSExpert"
-    iosExpertLabel.font = UIFont.systemFont(ofSize: 12.0)
-    iosExpertLabel.textAlignment = .right
-    iosExpertLabel.textColor = .secondaryLabel
-    iosExpertLabel.translatesAutoresizingMaskIntoConstraints = false
-    return iosExpertLabel
-  }()
+    @UsesAutoLayout
+    private var iosLabel = UILabel.iosLabel()
 
   required init(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented.")
+      NSCoder.fatalErrorNotImplemented()
   }
 
   override init(frame: CGRect) {
     super.init(frame: frame)
     backgroundColor = .systemBackground
 
-    [nameLabel, representationImageView, categoryLabel, iosExpertLabel].forEach {
+    [nameLabel, representationImageView, categoryLabel, iosLabel].forEach {
       addSubview($0)
     }
 
-    nameLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
-    nameLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
-    nameLabel.bottomAnchor.constraint(equalTo: representationImageView.topAnchor, constant: -8.0).isActive = true
+    nameLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).activate()
+    nameLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).activate()
+    nameLabel.bottomAnchor.constraint(equalTo: representationImageView.topAnchor, constant: Layout.standard * -1.0).activate()
 
-    representationImageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    representationImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+    representationImageView.centerXAnchor.constraint(equalTo: centerXAnchor).activate()
+    representationImageView.centerYAnchor.constraint(equalTo: centerYAnchor).activate()
     let representationHeightWidth: CGFloat = 343
-    representationImageView.heightAnchor.constraint(equalToConstant: representationHeightWidth).isActive = true
-    representationImageView.widthAnchor.constraint(equalToConstant: representationHeightWidth).isActive = true
+    representationImageView.heightAnchor.constraint(equalToConstant: representationHeightWidth).activate()
+    representationImageView.widthAnchor.constraint(equalToConstant: representationHeightWidth).activate()
+    categoryLabel.topAnchor.constraint(equalTo: representationImageView.bottomAnchor, constant: Layout.standard).activate()
+    categoryLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).activate()
+    categoryLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).activate()
 
-    categoryLabel.topAnchor.constraint(equalTo: representationImageView.bottomAnchor, constant: 8.0).isActive = true
-    categoryLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
-    categoryLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
-
-    iosExpertLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
-    iosExpertLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
-    iosExpertLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -8.0).isActive = true
+      iosLabel.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).activate()
+      iosLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).activate()
+      iosLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: Layout.standard * -1.0).activate()
   }
 
   func configure(symbol: Symbol) {
