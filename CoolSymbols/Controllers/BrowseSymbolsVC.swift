@@ -9,12 +9,12 @@ class BrowseSymbolsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     if let castedView = view as? BrowseSymbolsView {
       return castedView
     } else {
-      fatalError("Could not cast \(self).view to \(BrowseSymbolsView.self).")
+        fatalError(fatalCastMessage(view: BrowseSymbolsView.self))
     }
   }
 
   required init?(coder aDecoder: NSCoder) {
-    fatalError("init(coder:) has not been implemented.")
+      NSCoder.fatalErrorNotImplemented()
   }
 
   init() {
@@ -54,8 +54,10 @@ class BrowseSymbolsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     BrowseSymbolsView.rowHeight
   }
 
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: false)
-    // TODO
-  }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      tableView.deselectRow(at: indexPath, animated: false)
+      let symbolDetailVC = SymbolDetailVC(symbol: symbols[indexPath.row])
+      navigationController?.pushViewController(symbolDetailVC, animated: true)
+    }
 }
